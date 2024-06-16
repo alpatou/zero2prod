@@ -55,7 +55,7 @@ jobs:
   security_audit:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: taiki-e/install-action@cargo-deny
+      - name: Install cargo audit
+        run: cargo install cargo-audit
       - name: Scan for vulnerabilities
-        run: cargo deny check advisories
+        run: cargo audit

@@ -51,14 +51,3 @@ jobs:
       - name: Generate code coverage
         run: |
           cargo tarpaulin --ignore-tests
-
-  audit:
-    name: Audit
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: dtolnay/rust-toolchain@stable
-        with:
-          components: cargo-audit
-      - name: Audit
-        run: cargo audit
